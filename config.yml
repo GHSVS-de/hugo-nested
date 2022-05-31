@@ -1,0 +1,45 @@
+baseURL: "https://example.com/"
+languageCode: "en-us"
+title": "Topic #38878"
+enableInlineShortcodes: true
+
+####EXTRAKT-START markup
+# https://gohugo.io/getting-started/configuration-markup#goldmark
+markup:
+  goldmark:
+    renderer:
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      # Siehe https://discourse.gohugo.io/t/anchorize-behavior-has-changed-in-v0-94-2/37746/3
+      # Siehe autoHeadingIDType (“github”) auf https://gohugo.io/getting-started/configuration-markup
+      # Default: "github setting creates anchors in the same way that GitHub creates anchors."
+      # # Das kann bei Verwendung von anchorize zu Ergebnissen mit mehreren Hyphens hintereinander führen oder vorne.
+      # # autoHeadingIDType: github
+      autoHeadingIDType: blackfriday
+    renderer:
+      # Render newlines as <br>.
+      hardWraps: false
+      xhtml: false
+      unsafe: true
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      # Vorsicht mit dieser Einstellung auf true. Siehe https://ghsvs.de/programmierer-schnipsel/sonstige/343-hugo-doppelter-bindestrich-wird-zu-1-langen-strich
+      typographer: false
+  highlight:
+    noClasses: false
+    lineNos: false
+    lineNumbersInTable: false
+  tableOfContents:
+    startLevel:         2
+    endLevel:           4
+    ordered: false
+####EXTRAKT-END markup
